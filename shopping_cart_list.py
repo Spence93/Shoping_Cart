@@ -1,9 +1,11 @@
-stock = [["Whiskers", 0, 5],
-         ["Kong", 0, 3],
-         ["Hay", 0, 15],
-         ["Fish Food", 0, 2]]
+import copy
 
-items = stock.copy()
+stock_file = [["Whiskers", 0, 5],
+              ["Kong", 0, 3],
+              ["Hay", 0, 15],
+              ["Fish Food", 0, 2]]
+
+items = copy.deepcopy(stock_file)
 
 cart = []
 
@@ -49,7 +51,7 @@ while (not program):
             counter += 1
     print("-" * 75)
     print("1. Add an item to your cart")
-    print("2. Remove an item to your cart")
+    print("2. Remove an item from your cart")
     print("3. View total cost")
     print("4. Checkout")
     print("-" * 75)
