@@ -69,7 +69,7 @@ while (not program):
         item_choice = int(
             input("Please type the item from the list you wish to add: "))
         print("-" * 75)
-        
+
         # A for loop to take users input for item_choice and iterate through
         # the original item list, and add correct item
         for i in range(5):
@@ -140,11 +140,11 @@ while (not program):
                 end = True
             print(f" {cart[counter]}, £{item_price[counter]}")
             counter += 1
-            
+
         print("-" * 75)
         print(f" Total price: £{total_price}")
         print("-" * 75)
-        # Gives the user the option to end program after viewing cart and 
+        # Gives the user the option to end program after viewing cart and
         # price, or to continue
         print("1. Yes")
         print("2. No")
