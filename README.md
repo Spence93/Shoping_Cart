@@ -3,6 +3,6 @@ The program will display the users current items in their cart, and be able to p
 as well as calculate the total cost.
 This is my first portfolio task within my software engineering bootcamp with HyperionDev.
 
-- Original Program - This was my first attempt at the portfolio near the start of the course
-- 2D List - I updated the original program to use 2D lists to store all the information related to each item ( name, quanity price)
-- Adding Functions - this will be my next update to the program, yet to be compelted.
+- Original Program - This was my first attempt at the portfolio near the very start of the course
+- 2D List - I updated the original program to use 2D lists to store all the information related to each item ( name, quanity, price)
+- Adding Functions and OOP - this will be my next update to the program, yet to be compelted.
