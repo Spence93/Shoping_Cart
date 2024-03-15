@@ -1,0 +1,4 @@
+Whiskers, 0, 5
+Kong, 0, 3
+Hay, 0, 15
+Fish Food, 0, 2
