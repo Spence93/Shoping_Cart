@@ -1,5 +1,4 @@
 from items_class import Items
-import os
 
 
 class Stock:
