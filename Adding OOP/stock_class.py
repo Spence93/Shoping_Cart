@@ -15,7 +15,8 @@ class Stock:
                 stock_file.append(temp)
 
             for item in (stock_file):
-                product = (Items(item[0], item[1], item[2]))
+                product = (Items(item[0], int(
+                    item[1]), int(item[2]), int(item[3])))
                 self.stock_list.append(product)
 
     def get_stock(self):

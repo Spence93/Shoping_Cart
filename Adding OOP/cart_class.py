@@ -4,28 +4,28 @@
 class Cart:
     def __init__(self) -> None:
         self.cart = []
-        self.whiskers = 0
-        self.kong = 0
-        self.hay = 0
-        self.fish_food = 0
 
-    # def get_cart(self):
-    #     for item in self.cart:
-    #         if item.name == "Whiskers":
-    #             self.whiskers += 1
-    #         elif item.name == "Kong":
-    #             self.kong += 1
-    #         elif item.name == "Hay":
-    #             self.hay += 1
-    #         elif item.name == "Fish Food":
-    #             self.fish_food += 1
+    def get_cart(self):
+
+        for item in (self.cart):
+            print(
+                f"{item.quantity}x {item.name}   -   £{item.price}")
 
     def add_item(self, stock, index):
         if index.isdigit():
             index = int(index) - 1
             if index >= 0 and (index) <= len(stock.stock_list):
-                self.cart.append(stock.stock_list[index])
-                print(f"1x {self.cart[-1].name} added to cart!")
+                if stock.stock_list[index] not in self.cart:
+                    self.cart.append(stock.stock_list[index])
+                    self.cart[-1].quantity += 1
+                    self.cart[-1].stock_level -= 1
+                    print(f"1x {self.cart[-1].name} added to your cart!")
+
+                else:
+                    for item in self.cart:
+                        if stock.stock_list[index].name == item.name:
+                            item.quantity += 1
+                            item.stock_level -= 1
 
             else:
                 print("Not a valid choice")
