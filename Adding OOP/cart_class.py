@@ -51,5 +51,13 @@ class Cart:
                 print(
                     "You cannot remove an item that is not already in your cart")
 
-    def total_price(self):
-        pass
+    def checkout(self):
+        user_input = input("Are you sure you wish to checkout? (Y/N) ")
+        if user_input.lower() == "y":
+            self.get_cart()
+            total_cost = 0
+            total_items = 0
+            for item in self.cart:
+                total_cost += (item.price * item.quantity)
+                total_items += item.quantity
+            print(f"Subtotal ({total_items} item(s)): £{total_cost}")

@@ -23,3 +23,7 @@ class Stock:
         print(prompt)
         for i, item in enumerate(self.stock_list, 1):
             print(f"{i}. {item.name}  \t- £{item.price}")
+
+    # Update txt file with current stock quanitites after checkout
+    def update_stock():
+        pass

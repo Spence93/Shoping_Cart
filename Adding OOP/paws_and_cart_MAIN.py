@@ -60,8 +60,8 @@ def main():
         print("-" * 75)
         print("1. Add an item to your cart")
         print("2. Remove an item from your cart")
-        print("3. View total cost")
-        print("4. Checkout")
+        print("3. Checkout")
+        print("4. Exit")
         print("-" * 75)
         user_input = input("Please choose an option from the menu:\n -> ")
 
@@ -77,6 +77,10 @@ def main():
             stock_file.get_stock("\nChoose an item to remove from your cart: ")
             user_input = input_valid()
             shopping_cart.remove_item(stock_file, user_input)
+
+        elif user_input == "3":
+            shopping_cart.checkout()
+            break
 
         elif user_input == "4":
             break
