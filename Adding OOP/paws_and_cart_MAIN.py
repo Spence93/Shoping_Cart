@@ -24,7 +24,19 @@ menu += """\n──────────────────────�
 ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐──────
 ──▐▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▌──────
 ────▀▄▄▀▀▀▀▀▄▄▀▀▀▀▀▀▀▄▄▀▀▀▀▀▄▄▀────────"""
-menu += "-" * 75
+menu += "\n" + "-" * 75
+
+
+def input_valid():
+    while True:
+        user_input = input("-> ")
+        if user_input.isdigit():
+            user_input = int(user_input) - 1
+            return user_input
+
+        else:
+            print("Input must be a numerical digit")
+
 
 # Creating stock items from .txt file.
 stock = "stock_file.txt"
@@ -40,10 +52,8 @@ def main():
         # To only display while cart is empty
         if len(shopping_cart.cart) < 1:
             print(menu)
-            # Displays current cart if there is an item in the cart
+        # Displays current cart if there is an item in the cart
         else:
-            print("\nYour cart: ")
-            print("-" * 75)
             shopping_cart.get_cart()
 
         # Prints user menu
@@ -58,15 +68,22 @@ def main():
         # Adding an item to users cart
         if user_input == "1":
             # Prints out available stock
-            stock_file.get_stock()
-            user_input = input("-> ")
+            stock_file.get_stock("\nChoose an item to add to your cart: ")
+            user_input = input_valid()
             shopping_cart.add_item(stock_file, user_input)
 
         elif user_input == "2":
-            pass
+            shopping_cart.get_cart()
+            stock_file.get_stock("\nChoose an item to remove from your cart: ")
+            user_input = input_valid()
+            shopping_cart.remove_item(stock_file, user_input)
 
         elif user_input == "4":
             break
+
+        else:
+            print("Incorrect option, please choose an option from the menu")
+            input("Press any key to continue")
 
 
 if __name__ == "__main__":

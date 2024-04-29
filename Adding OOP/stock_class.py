@@ -19,6 +19,7 @@ class Stock:
                     item[1]), int(item[2]), int(item[3])))
                 self.stock_list.append(product)
 
-    def get_stock(self):
+    def get_stock(self, prompt):
+        print(prompt)
         for i, item in enumerate(self.stock_list, 1):
             print(f"{i}. {item.name}  \t- £{item.price}")
