@@ -1,6 +1,6 @@
 class Items:
 
-    def __init__(self, name, stock_level, quantity, price) -> None:
+    def __init__(self, name, price, quantity, stock_level) -> None:
         self.name = name
         self.price = price
         self.quantity = quantity

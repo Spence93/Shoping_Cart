@@ -54,10 +54,11 @@ def main():
             print(menu)
         # Displays current cart if there is an item in the cart
         else:
-            shopping_cart.get_cart()
+            shopping_cart.get_cart("Your cart: ")
 
         # Prints user menu
         print("-" * 75)
+        print("Main menu\n")
         print("1. Add an item to your cart")
         print("2. Remove an item from your cart")
         print("3. Checkout")
@@ -73,13 +74,14 @@ def main():
             shopping_cart.add_item(stock_file, user_input)
 
         elif user_input == "2":
-            shopping_cart.get_cart()
+            shopping_cart.get_cart("Your cart: ")
             stock_file.get_stock("\nChoose an item to remove from your cart: ")
             user_input = input_valid()
             shopping_cart.remove_item(stock_file, user_input)
 
         elif user_input == "3":
             shopping_cart.checkout()
+            stock_file.update_stock(stock)
             break
 
         elif user_input == "4":

@@ -6,16 +6,23 @@ class Cart:
     def __init__(self) -> None:
         self.cart = []
 
-    def get_cart(self):
-        print("\nYour cart: ")
+    def get_cart(self, prompt):
+        print(f"\n{prompt}")
         print("-" * 75)
-
+        total_cost = 0
+        total_items = 0
         for item in (self.cart):
             item_total = (item.price * item.quantity)
+            total_cost += (item.price * item.quantity)
+            total_items += item.quantity
             print(
                 f"{item.quantity}x {item.name}  \t£{item_total}")
             print("-" * 75)
+        print(f"Subtotal ({total_items} item(s)): £{total_cost}")
+        print("-" * 75)
+        print("\n\n")
 
+    # adding item from stock list to users shoppng cart **Need to add feature to show when item is out of stock**
     def add_item(self, stock, index):
         if index >= 0 and (index) <= len(stock.stock_list):
             if stock.stock_list[index] not in self.cart:
@@ -52,12 +59,7 @@ class Cart:
                     "You cannot remove an item that is not already in your cart")
 
     def checkout(self):
+        self.get_cart("Checkout: ")
         user_input = input("Are you sure you wish to checkout? (Y/N) ")
         if user_input.lower() == "y":
-            self.get_cart()
-            total_cost = 0
-            total_items = 0
-            for item in self.cart:
-                total_cost += (item.price * item.quantity)
-                total_items += item.quantity
-            print(f"Subtotal ({total_items} item(s)): £{total_cost}")
+            print("Thanks and see you again soon!")

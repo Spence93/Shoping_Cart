@@ -25,5 +25,8 @@ class Stock:
             print(f"{i}. {item.name}  \t- £{item.price}")
 
     # Update txt file with current stock quanitites after checkout
-    def update_stock():
-        pass
+    def update_stock(self, stock):
+        with open(stock, "w") as file:
+            for item in self.stock_list:
+                file.write(f"""{item.name}, {item.price}, 0 , {
+                           item.stock_level}\n""")
