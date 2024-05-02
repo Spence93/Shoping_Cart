@@ -6,6 +6,7 @@ class Cart:
     def __init__(self) -> None:
         self.cart = []
 
+    # Prints out the users cart, with the item name, price and subtotal of cart.
     def get_cart(self, prompt):
         print(f"\n{prompt}")
         print("-" * 75)
@@ -23,25 +24,33 @@ class Cart:
         print("\n\n")
 
     # adding item from stock list to users shoppng cart **Need to add feature to show when item is out of stock**
+
     def add_item(self, stock, index):
         if index >= 0 and (index) <= len(stock.stock_list):
-            if stock.stock_list[index] not in self.cart:
+            if stock.stock_list[index] not in self.cart and stock.stock_list[index].stock_level > 0:
                 self.cart.append(stock.stock_list[index])
                 self.cart[-1].quantity += 1
                 self.cart[-1].stock_level -= 1
                 print(f"\n1x {self.cart[-1].name} added to your cart!")
                 time.sleep(1)
 
-            else:
+            elif stock.stock_list[index] in self.cart and stock.stock_list[index].stock_level > 0:
                 for item in self.cart:
                     if stock.stock_list[index].name == item.name:
                         item.quantity += 1
                         item.stock_level -= 1
                         print(f"\n1x {item.name} added to your cart!")
                         time.sleep(1)
+
+            else:
+                print(
+                    f"{stock.stock_list[index].name} is currently out of stock, please choose another item")
+                time.sleep(1)
+
         else:
             print("Not a valid choice")
 
+    # Removes item from the users cart
     def remove_item(self, stock, index):
         if index >= 0 and (index) <= len(stock.stock_list):
             if stock.stock_list[index] in self.cart:

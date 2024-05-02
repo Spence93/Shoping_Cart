@@ -6,6 +6,7 @@ class Stock:
     def __init__(self) -> None:
         self.stock_list = []
 
+    # Add stock from a txt file, to the stock_list list
     def add_stock(self, stock):
         with open(stock, "r") as file:
             stock_file = []
@@ -19,6 +20,8 @@ class Stock:
                     item[1]), int(item[2]), int(item[3])))
                 self.stock_list.append(product)
 
+    # Displays availiable stock which has been taken from the txt file and added to the stock list class
+    # **Would like to change this to use tabulate and print out current stock levels**
     def get_stock(self, prompt):
         print(prompt)
         for i, item in enumerate(self.stock_list, 1):
