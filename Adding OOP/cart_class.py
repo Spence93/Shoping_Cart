@@ -23,8 +23,7 @@ class Cart:
         print("-" * 75)
         print("\n\n")
 
-    # adding item from stock list to users shoppng cart **Need to add feature to show when item is out of stock**
-
+    # Adding item from stock list to users shoppng cart
     def add_item(self, stock, index):
         if index >= 0 and (index) <= len(stock.stock_list):
             if stock.stock_list[index] not in self.cart and stock.stock_list[index].stock_level > 0:
