@@ -46,7 +46,7 @@ while (not program):
             if (counter == len(cart)-1):
                 end = True
 
-            print(f" {cart[counter][1]}x {cart[counter][0]
+            print(f" {cart[counter][1]}x {cart[counter][0]\
                                           } - £{cart[counter][1] * cart[counter][2]}")
             counter += 1
     print("-" * 75)
@@ -87,7 +87,7 @@ while (not program):
                             index_1 = cart.index(x)
                             cart[index_1][1] += 1
                             print("-" * 75)
-                            print(f"You have added 1x {
+                            print(f"You have added 1x {\
                                   items[i][0]} - £{items[i][2]}")
                             print("-" * 75)
                             item_count += 1
@@ -124,7 +124,7 @@ while (not program):
             if (counter == len(cart)-1):
                 end = True
 
-            print(f" {cart[counter][1]}x {cart[counter][0]
+            print(f" {cart[counter][1]}x {cart[counter][0]\
                                           } - £{cart[counter][1] * cart[counter][2]}")
             counter += 1
         print("-" * 19)
